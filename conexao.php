@@ -10,7 +10,7 @@ catch (PDOException $e) {
 }
 $conexao = $conn;
 */
-$serverName = "serverpresentacao1309.database.windows.net";
+/*$serverName = "serverpresentacao1309.database.windows.net";
 $connectionOptions = array(
     "Database" => "bdapresentacao",
     "Uid" => "saxton",
@@ -18,9 +18,9 @@ $connectionOptions = array(
 );
 //Establishes the connection
 $conexao = sqlsrv_connect($serverName, $connectionOptions);
+*/
 
-
-//$conexao = new mysqli('localhost', 'root','', 'bdtrabalho'); 
+$conexao = new mysqli('localhost', 'root','', 'bdtrabalho'); 
 //Variavel = new mysqli("servidor", "usuario", "senha", "banco") or die("Erro ao conectar");
 	if (!$conexao)
 	{ 
