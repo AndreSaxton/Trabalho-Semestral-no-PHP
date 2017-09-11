@@ -64,7 +64,7 @@
 		$condicaoBusca =  $_GET["condicaoBusca"];
 		$buscarPor =  $_GET["buscarPor"];
 				
-		$consulta = "SELECT * INTO FROM pessoa";
+		$consulta = "SELECT * FROM pessoa";
 		if(($campoBusca!="")||($condicaoBusca!="")||($buscarPor!="")){
 			if($condicaoBusca=="Nome"){//se buscar nome{
 				if($campoBusca =="")//se nao houver nada preenchido
