@@ -94,7 +94,7 @@
 					
 			
 		//$verifica = $conexao->query($consulta);
-		$verifica = sqlsrv_query($conexao, $consulta);
+		$verifica = $conexao->sqlsrv_query($consulta);
 	
         $rows = $verifica->num_rows;
         if($rows == 0){ //verifica se a informação chegou
@@ -102,7 +102,7 @@
 			//echo $consulta;
         }else{		
 		//$busca = $conexao->query($consulta);     
-		$busca = sqlsrv_query($conexao, $consulta);
+		$busca = $conexao->sqlsrv_query($consulta);
 		//busca os dados na tabela 
 		echo "<table>
 			<tr class='dois'>
@@ -118,7 +118,7 @@
 			<td> Condição </td>
 		</tr>";
 		//while($info = $busca->fetch_assoc()){
-		while($info = sqlsrv_fetch_array($busca)) 
+		while($info = $busca->sqlsrv_fetch_array()){ 
 			if($info['nm_tipo_pessoa']=="Juridica"){
 				$info['cd_documento_pessoa'] = substr_replace($info['cd_documento_pessoa'], ".", 2, 0);//usar para incluir ponto
 				$info['cd_documento_pessoa'] = substr_replace($info['cd_documento_pessoa'], ".", 6, 0);
