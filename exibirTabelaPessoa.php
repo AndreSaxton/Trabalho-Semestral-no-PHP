@@ -93,16 +93,16 @@
 		require_once('conexao.php'); //chama o arquivo de conexão com o banco		
 					
 			
-		//$verifica = $conexao->query($consulta);
-		$verifica = $conexao->sqlsrv_query($consulta);
+		$verifica = $conexao->query($consulta);
+		
 	
         $rows = $verifica->num_rows;
         if($rows == 0){ //verifica se a informação chegou
             echo "falha ao buscar, ". $campoBusca." não encontrado";
 			//echo $consulta;
         }else{		
-		//$busca = $conexao->query($consulta);     
-		$busca = $conexao->sqlsrv_query($consulta);
+		$busca = $conexao->query($consulta);     
+		
 		//busca os dados na tabela 
 		echo "<table>
 			<tr class='dois'>
@@ -117,8 +117,8 @@
 			<td> Documento </td>
 			<td> Condição </td>
 		</tr>";
-		//while($info = $busca->fetch_assoc()){
-		while($info = $busca->sqlsrv_fetch_array()){ 
+		while($info = $busca->fetch_assoc()){
+		
 			if($info['nm_tipo_pessoa']=="Juridica"){
 				$info['cd_documento_pessoa'] = substr_replace($info['cd_documento_pessoa'], ".", 2, 0);//usar para incluir ponto
 				$info['cd_documento_pessoa'] = substr_replace($info['cd_documento_pessoa'], ".", 6, 0);
